@@ -1,5 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const webpack = require('webpack');
 
 function buildConfig(configDirs) {
@@ -11,18 +14,22 @@ function buildConfig(configDirs) {
             publicPath: '/'
         },
         mode: 'production',
-        devServer: {
-            contentBase: configDirs.BUILD_DIR,
-            compress: false,
-            port: 3000,
-            historyApiFallback: true
-        },
         resolve: {
             alias: {
                 components: configDirs.APP_DIR + '/app/components/',
                 assets: configDirs.APP_DIR + '/app/components/assets/'
             },
             extensions: ['.js', '.jsx']
+        },
+        optimization: {
+            minimizer: [
+                new UglifyJsPlugin({
+                    cache: true,
+                    parallel: true,
+                    sourceMap: true
+                }),
+                new OptimizeCSSAssetsPlugin({})
+            ]
         },
         module: {
             rules: [
@@ -42,12 +49,13 @@ function buildConfig(configDirs) {
                 },
                 {
                     test: /\.css$/,
-                    use: ['style-loader', 'css-loader']
+                    use: [MiniCssExtractPlugin.loader, "css-loader"]
                 }
             ]
         },
         devtool: false,
         plugins: [
+            new MiniCssExtractPlugin(),
             new HtmlWebpackPlugin({
                 template: configDirs.APP_DIR + '/index.html'
             }),
