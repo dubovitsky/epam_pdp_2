@@ -1,0 +1,60 @@
+.serialWrapper {
+    padding: 15px 0;
+}
+
+.serialWrapper a {
+    display: block;
+    background-color: #fff;
+    border: solid 1px #e3e3e3;
+    color: inherit;
+    position: relative;
+    height: 100%;
+}
+
+.serialWrapper a:hover {
+    text-decoration: none;
+}
+
+.serialPoster {
+    position: relative;
+    margin: -1px;
+    width: calc(100% + 2px);
+    max-width: calc(100% + 2px);
+}
+
+.serialMeta {
+    display: block;
+    overflow: hidden;
+}
+
+.serialTitle {
+    display: block;
+    color: #323639;
+    font-family: "Montserrat",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 15px 14px 30px 14px;
+}
+
+.serialGenre {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #72757A;
+    display: block;
+    padding-right: 60px;
+    height: 16px;
+    overflow: hidden;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 0 10px 14px;
+    text-transform: uppercase;
+}
+
+.serialYear {
+    color: #72757A;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 14px 10px 0;
+}

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
 function buildConfig(configDirs) {
@@ -19,8 +20,9 @@ function buildConfig(configDirs) {
         },
         resolve: {
             alias: {
-                components: configDirs.APP_DIR + '/app/components/',
-                assets: configDirs.APP_DIR + '/app/components/assets/'
+                components: configDirs.APP_DIR + '/components/',
+                assets: configDirs.APP_DIR + '/components/assets/',
+                hooks: configDirs.APP_DIR + '/hooks/'
             },
             extensions: ['.js', '.jsx']
         },
@@ -32,7 +34,7 @@ function buildConfig(configDirs) {
                     enforce: "pre"
                 },
                 {
-                    test: /\.js$/,
+                    test: /\.(js|jsx)$/,
                     exclude: /node_modules/,
                     use: 'babel-loader'
                 },
@@ -42,7 +44,26 @@ function buildConfig(configDirs) {
                 },
                 {
                     test: /\.css$/,
-                    use: ['style-loader', 'css-loader']
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                importLoaders: 1,
+                                modules: true,
+                                localIdentName: '[local]___[hash:base64:5]'
+                            }
+                        }
+                    ],
+                    include: /\.module\.css$/
+                },
+                {
+                    test: /\.css$/,
+                    use: [
+                      'style-loader',
+                      'css-loader'
+                    ],
+                    exclude: /\.module\.css$/
                 }
             ]
         },
@@ -54,7 +75,8 @@ function buildConfig(configDirs) {
             new webpack.SourceMapDevToolPlugin({            
                 filename: 'index.js.map',
                 exclude: ['vendor.js']
-            })
+            }),
+            new MiniCssExtractPlugin()
         ]
     };
 };

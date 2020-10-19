@@ -3,6 +3,8 @@
 #ide
 .history
 .vscode
+.vs
+/.vs
 
 # dependencies
 /node_modules
