@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Filter () {
+const Filter = () => {
     return (
         <div className="text-right">
             <span>Sort by: </span>
@@ -9,3 +9,5 @@ export default function Filter () {
         </div>
     )
 }
+
+export default Filter;

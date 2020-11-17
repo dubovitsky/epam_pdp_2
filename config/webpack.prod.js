@@ -16,8 +16,10 @@ function buildConfig(configDirs) {
         mode: 'production',
         resolve: {
             alias: {
-                components: configDirs.APP_DIR + '/app/components/',
-                assets: configDirs.APP_DIR + '/app/components/assets/'
+                components: configDirs.APP_DIR + '/components/',
+                assets: configDirs.APP_DIR + '/components/assets/',
+                hooks: configDirs.APP_DIR + '/hooks/',
+                context: configDirs.APP_DIR + '/context/'
             },
             extensions: ['.js', '.jsx']
         },
@@ -59,7 +61,7 @@ function buildConfig(configDirs) {
             new HtmlWebpackPlugin({
                 template: configDirs.APP_DIR + '/index.html'
             }),
-            new webpack.SourceMapDevToolPlugin({            
+            new webpack.SourceMapDevToolPlugin({
                 filename: 'index.js.map',
                 exclude: ['vendor.js']
             })

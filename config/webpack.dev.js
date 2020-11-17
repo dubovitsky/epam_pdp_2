@@ -1,11 +1,10 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
 function buildConfig(configDirs) {
     return {
-        entry: configDirs.APP_DIR + '/index.js',
+        entry: configDirs.APP_DIR + '/index.js',        
         output: {
             path: configDirs.BUILD_DIR,
             filename: 'bundle.js',
@@ -22,7 +21,8 @@ function buildConfig(configDirs) {
             alias: {
                 components: configDirs.APP_DIR + '/components/',
                 assets: configDirs.APP_DIR + '/components/assets/',
-                hooks: configDirs.APP_DIR + '/hooks/'
+                hooks: configDirs.APP_DIR + '/hooks/',
+                context: configDirs.APP_DIR + '/context/'
             },
             extensions: ['.js', '.jsx']
         },

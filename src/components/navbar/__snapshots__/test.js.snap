@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should render correctly in "debug" mode 1`] = `
+<Navbar
+  bg="dark"
+  collapseOnSelect={false}
+  expand={true}
+  variant="dark"
+>
+  <Container
+    fluid={false}
+  >
+    <NavbarBrand>
+      <span
+        className="title"
+      >
+        Find you movie
+      </span>
+    </NavbarBrand>
+    <Form
+      inline={true}
+    >
+      <FormGroup
+        as={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "defaultProps": Object {
+              "noGutters": false,
+            },
+            "displayName": "Row",
+            "render": [Function],
+          }
+        }
+        className="mr-sm-2"
+      >
+        <FormLabel
+          className="white"
+          column={true}
+          sm={5}
+          srOnly={false}
+        >
+          Search by
+        </FormLabel>
+        <Col
+          sm={7}
+        >
+          <ForwardRef
+            defaultValue={
+              Array [
+                1,
+              ]
+            }
+            name="radio"
+            type="radio"
+          >
+            <ToggleButton
+              value={1}
+              variant="secondary"
+            >
+              Title
+            </ToggleButton>
+            <ToggleButton
+              value={2}
+              variant="secondary"
+            >
+              Genre
+            </ToggleButton>
+          </ForwardRef>
+        </Col>
+      </FormGroup>
+      <FormGroup
+        className="mr-sm-2"
+      >
+        <FormLabel
+          className="sr-only"
+          column={false}
+          srOnly={false}
+        >
+          Find you movie
+        </FormLabel>
+        <FormControl
+          placeholder="Search"
+          type="search"
+        />
+      </FormGroup>
+      <Button
+        active={false}
+        disabled={false}
+        type="submit"
+        variant="primary"
+      >
+        Search
+      </Button>
+    </Form>
+  </Container>
+</Navbar>
+`;

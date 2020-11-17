@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from "context/Context.js";
 import Container from 'react-bootstrap/Container';
+import { PropTypes } from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import MoviewItem from 'components/item';
+import styles from './styles.module.css';
 
-import Data from '../../serials.mock.js';
+ const MoviesList = (props) => {
+    const { isLoaded } = props;
+    const [context] = useContext(Context);
+    const { data } = context;
 
-const listItems = Data.map((item) =>
-  <MoviewItem key={item.id} value={item}></MoviewItem>
-);
-
-export default function MoviesList () {
-    return (
-        <Container>
-            <Row>
-                {listItems}
-                {listItems}
-            </Row>
-        </Container>
-    )
+    if (!isLoaded) {
+        return (
+            <Container>
+                <div className={styles.loader}>Loading...</div>
+            </Container>
+        )
+    } else {
+        return (
+            <Container>
+                <Row>
+                    {data.map(item => (
+                        <MoviewItem key={item.id} movie={item}></MoviewItem>
+                    ))}
+                </Row>
+            </Container>
+        )
+    }
 }
+
+MoviewItem.propTypes = {
+    isLoaded: PropTypes.bool
+};
+
+export default MoviesList;

@@ -6,7 +6,7 @@ import NavBar from 'components/navbar';
 import Results from 'components/results';
 import Filter from 'components/filter';
 
-export default function Header() {
+const Header = () => {
     return (
         <header>
             <NavBar />
@@ -23,3 +23,5 @@ export default function Header() {
         </header>
     )
 }
+
+export default Header;

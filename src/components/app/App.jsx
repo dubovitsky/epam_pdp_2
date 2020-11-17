@@ -1,15 +1,23 @@
-import React, { Component } from 'react';
-// import { Switch, BrowserRouter, Route } from 'react-router-dom';
-import Header from 'components/header';
-import MoviesList from 'components/list';
-import Footer from 'components/footer';
+import React from 'react';
+import MovieDetails from 'components/details';
+import Home from 'components/home';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
 
-export default function App () {
+import './style.css';
+
+const App = () => {
     return (
-        <>
-            <Header />
-            <MoviesList />
-            <Footer />
-        </>
+        <Router>
+            <Switch>
+                <Route exact path='/' component={Home} />
+                <Route path="/movie/:id" component={MovieDetails} />
+            </Switch>
+        </Router>
     )
 }
+
+export default App;

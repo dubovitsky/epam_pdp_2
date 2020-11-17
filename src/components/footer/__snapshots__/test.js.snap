@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render correctly in "debug" mode 1`] = `
+<footer
+  className="pb-5"
+>
+  <Container
+    fluid={false}
+  >
+    footer
+  </Container>
+</footer>
+`;
