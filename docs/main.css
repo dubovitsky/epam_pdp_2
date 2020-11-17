@@ -1,0 +1,138 @@
+.serialWrapper___20ip4 {
+    padding: 15px 0;
+}
+
+.serialWrapper___20ip4 a {
+    display: block;
+    background-color: #fff;
+    border: solid 1px #e3e3e3;
+    color: inherit;
+    position: relative;
+    height: 100%;
+}
+
+.serialWrapper___20ip4 a:hover {
+    text-decoration: none;
+}
+
+.serialPoster___Vq3vA {
+    position: relative;
+    margin: -1px;
+    width: calc(100% + 2px);
+    max-width: calc(100% + 2px);
+}
+
+.serialMeta___2-v-5 {
+    display: block;
+    overflow: hidden;
+}
+
+.serialTitle___3xKvT {
+    display: block;
+    color: #323639;
+    font-family: "Montserrat",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 15px 14px 30px 14px;
+}
+
+.serialGenre___ec48h {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #72757A;
+    display: block;
+    padding-right: 60px;
+    height: 16px;
+    overflow: hidden;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0 0 10px 14px;
+    max-width: 240px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.serialYear___1FH_B {
+    color: #72757A;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 14px 10px 0;
+    display: block;
+    padding: 2px;
+    border: 1px solid #e8eaed;
+    line-height: 1;
+}
+.loader___1bd_I {
+    display: block;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader___1bd_I:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid rgb(85, 135, 158);
+    border-color: rgb(111, 187, 218) transparent rgb(166, 224, 238) transparent;
+    animation: lds-dual-ring___2zk9J 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring___2zk9J {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+.title___AlUDC {
+    text-transform: uppercase;
+}
+
+.white___3ovUE {
+    color: #fff;
+}
+
+.genre___eHKgq {
+    background-color: #f3f3f3;
+    margin: 20px 0 5px;
+    padding: 15px;
+}
+
+.movieDescription___1GxRC {
+    padding-top: 63px;
+}
+
+.flexbox___2Zvct {
+    display: flex;
+    align-items: center;
+}
+
+.rating___AlmNJ {
+    margin-left: 20px;
+    border: 1px solid #1e7e34;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.year___nkD4O {
+    margin-right: 50px;
+}
+
+/*# sourceMappingURL=index.js.map*/
